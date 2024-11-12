@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1,
+    "title": "Laptop",
+    "description": "Lenovo 29",
+    "price": 5000,
+    "thumbnail": "https://img1.com",
+    "code": "s23ewe",
+    "stock": 20,
+    "category": "pcs"
+  },
+  {
+    "id": 2,
+    "title": "Laptop",
+    "description": "hp 29",
+    "price": 5000,
+    "thumbnail": "https://img2.com",
+    "code": "s23e23e",
+    "stock": 10,
+    "category": "pcs"
+  },
+  {
+    "id": 3,
+    "title": "All in one",
+    "description": "Pc all in one",
+    "price": 120000,
+    "thumbnail": true,
+    "code": [],
+    "stock": "eeoqr213",
+    "category": 25,
+    "status": "Computer Desk"
+  },
+  {
+    "id": 4,
+    "title": "All in one",
+    "description": "Pc all in one",
+    "price": 120000,
+    "thumbnail": true,
+    "code": [],
+    "stock": "eeoqr213",
+    "category": 25,
+    "status": "Computer Desk"
+  },
+  {
+    "id": 5,
+    "title": "All in one",
+    "description": "Pc all in one",
+    "price": 120000,
+    "thumbnail": true,
+    "code": [],
+    "stock": "eeoqr213",
+    "category": 25,
+    "status": "Computer Desk"
+  }
+]
