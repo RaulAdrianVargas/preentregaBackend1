@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "title": "Notebook",
+        "description": "Lenovo 5",
+        "price": 1200000,
+        "thumbnail": "https://img1.com",
+        "code": "214wqe2",
+        "stock": 40
+    },
+    {
+        "id": 2,
+        "title": "Notebook",
+        "description": "hp 25",
+        "price": 1200000,
+        "thumbnail": "https://img2.com",
+        "code": "213214a",
+        "stock": 50
+    },
+    {
+        "id": 3,
+        "title": "All in one",
+        "description": "Pc all in one",
+        "price": 120000,
+        "thumbnails": [],
+        "code": "eeoqr213",
+        "stock": 25,
+        "category": "Computer Desk",
+        "status": true
+    },
+    {
+        "id": 5,
+        "title": "Titulo x",
+        "description": "description x",
+        "price": 23145,
+        "thumbnails": [
+            "https://img51.com"
+        ],
+        "code": "qwrqc123",
+        "stock": 56,
+        "category": "x",
+        "status": "true"
+    },
+    {
+        "id": 6,
+        "title": "Titulo x",
+        "description": "description x",
+        "price": 22145,
+        "thumbnails": "true",
+        "code": [
+            "https://img51.com"
+        ],
+        "stock": "12345214",
+        "category": 56,
+        "status": "cx"
+    }
+]
