@@ -41,20 +41,19 @@ class ProductManager{
         }
     };
 
-    addProduct(title,description,price,code,stock,category,status = true,thumbnails = []){
-        if(!title || !description || !price || !code || !stock || !category){
-            return "Todos los parametros son requeridos [title,description,price,code,stock,category]"
+    addProduct({ title, description, price, code, stock, category, status = true, thumbnails = [] }) {
+        if (!title || !description || !price || !code || !stock || !category) {
+            return "Todos los parametros son requeridos [title,description,price,code,stock,category]";
         }
-
-        const codigoRepetido = this.#products.some(p => p.code == code);
+    
+        const codigoRepetido = this.#products.some(producto => producto.code == code);
         if (codigoRepetido)
             return `El codigo ${code} ya se encuentra registrado en otro producto `;
-
-        ProductManager.idProduct = ProductManager.idProduct + 1
-
+    
+        ProductManager.idProduct = ProductManager.idProduct + 1;
         const id = this.#asignId();
-        const newProduct =  {
-            id: id,
+        const newProduct = {
+            id,
             title,
             description,
             price,
@@ -66,9 +65,8 @@ class ProductManager{
         };
         this.#products.push(newProduct);
         this.#saveFile();
-
-        return "Producto agregado"
-        };
+        return "Producto agregado";
+    }
 
 
     getProducts(){
@@ -79,7 +77,7 @@ class ProductManager{
         let status = false;
         let resp = `El producto con el id ${id} no existe`
 
-       const product = this.#products.find(p => p.id == id);
+       const product = this.#products.find(producto => producto.id == id);
        if(product){
         status = true;
         resp = product;
@@ -90,7 +88,7 @@ class ProductManager{
     updateProduct(id, productProperties){
         let msg = `El producto con el id: ${id} no existe`;
 
-        const index = this.#products.findIndex(p => p.id === id);
+        const index = this.#products.findIndex(producto => producto.id === id);
 
         if(index !== -1){
             const {id, ...rest} = productProperties;
@@ -104,9 +102,9 @@ class ProductManager{
 
     deleteProduct(id){
         let msg = "Este id no coincide con ningun producto"
-        const index = this.#products.findIndex(p => p.id === id);
+        const index = this.#products.findIndex(producto => producto.id === id);
         if(index !== -1){
-            this.#products = this.#products.filter(p => p.id !== id)
+            this.#products = this.#products.filter(producto => producto.id !== id)
             this.#saveFile();
             msg = "Producto eliminado"
         }

@@ -1,0 +1,53 @@
+<div>
+    <h1>Segunda Preentrega</h1>
+    <p>Implementando handlebars</p>
+
+    <h3>Lista de productos:</h3>
+
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Codigo</th>
+            <th>Stock</th>
+            <th>Categoria</th>
+            <th>Status</th>
+            <th>Imagen</th>
+        </thead>
+        <tbody>
+            {{#each productos}}
+            <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.title}}</td>
+            <td>{{this.description}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.code}}</td>
+            <td>{{this.stock}}</td>
+            <td>
+                {{#if this.category}}
+                {{this.category}}
+                {{else}}
+                No hay una categoria determinada
+                {{/if}}
+            </td>
+            <td>
+                {{#if this.status}}
+                Activo
+                {{else}}
+                Desactivado
+                {{/if}}
+            </td>
+            <td>
+                {{#if this.thumbnails.length}}
+                <a href="{{this.thumbnails.[0]}}" target="_blank">{{this.thumbnails.[0]}}
+                {{else}}
+                No hay imagenes cargadas
+                {{/if}}
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

@@ -6,21 +6,21 @@ const router = Router();
 
 router.get("/:cid", (req,res)=>{
     const {cid} = req.params;
-    const c = new CartManager();
-    const result = c.getcartById(Number(cid))
+    const carrito = new CartManager();
+    const result = carrito.getcartById(Number(cid))
     return res.json({result});
 });
 
 router.post("/", (req,res)=>{
-    const c = new CartManager();
-    const result = c.createCart();
+    const carrito = new CartManager();
+    const result = carrito.createCart();
     return res.json({result});
 });
 
 router.post("/:cid/product/:pid", (req,res)=>{
     const {cid, pid} = req.params;
-    const c = new CartManager();
-    const result = c.addProductInCart(Number(cid), Number(pid));
+    const carrito = new CartManager();
+    const result = carrito.addProductInCart(Number(cid), Number(pid));
     return res.json({result});
 });
 

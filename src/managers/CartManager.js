@@ -50,7 +50,7 @@ class CartManager{
     }
 
     getcartById(id){
-       const cart = this.#carts.find(p => p.id == id);
+       const cart = this.#carts.find(producto => producto.id == id);
        if(cart){
         return cart
        }
@@ -62,7 +62,7 @@ class CartManager{
         const indexCart = this.#carts.findIndex(c => c.id == cid);
     
         if (indexCart !== -1) {
-            const indexProductoCart = this.#carts[indexCart].products.findIndex(p => p.id == pid);
+            const indexProductoCart = this.#carts[indexCart].products.findIndex(producto => producto.id == pid);
             const productManager = new ProductManager();
             const product = productManager.getProductById(pid);
     
