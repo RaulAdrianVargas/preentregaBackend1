@@ -6,9 +6,8 @@ socket.on('productos', productos => {
 
     productos.forEach(producto => {
         const row = tBody.insertRow();
-
         row.innerHTML = `
-        <td>${producto.id}</td>
+        <td>${producto._id}</td>
         <td>${producto.title}</td>
         <td>${producto.description}</td>
         <td>${producto.price}</td>
@@ -23,25 +22,24 @@ socket.on('productos', productos => {
 
 const formulario = document.getElementById('agregar_producto');
 
-formulario.addEventListener('submit', function (event){
+formulario.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const titulo = document.getElementById('titulo').value;
-    const descripcion = document.getElementById('descripcion').value;
-    const precio = document.getElementById('precio').value;
-    const codigo = document.getElementById('codigo').value;
-    const stock = document.getElementById('stock').value;
-    const categoria = document.getElementById('titulo').value;
-    
     const producto = {
-        title: titulo,
-        description: descripcion,
-        price: precio,
-        code: codigo,
-        stock: stock,
-        category: categoria
+        title: document.getElementById('title').value,
+        description: document.getElementById('description').value,
+        price: document.getElementById('price').value,
+        code: document.getElementById('code').value,
+        stock: document.getElementById('stock').value,
+        category: document.getElementById('category').value
     };
 
-    socket.emit('agregarProducto', producto)
+    // Validar que los campos obligatorios no estén vacíos
+    if (!producto.title || !producto.description || !producto.price || !producto.code || !producto.stock || !producto.category) {
+        alert('Todos los campos son obligatorios');
+        return;
+    }
+
+    socket.emit('agregarProducto', producto);
     formulario.reset();
 });

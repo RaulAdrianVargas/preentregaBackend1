@@ -1,53 +1,57 @@
 <div>
-    <h1>Segunda Preentrega</h1>
-    <p>Implementando handlebars</p>
+    <h1>Proyecto Final</h1>
+    <p>Poniendo todo lo aprendido en práctica</p>
 
     <h3>Lista de productos:</h3>
 
     <table>
         <thead>
             <th>Id</th>
-            <th>Titulo</th>
-            <th>Descripcion</th>
+            <th>Título</th>
+            <th>Descripción</th>
             <th>Precio</th>
-            <th>Codigo</th>
             <th>Stock</th>
-            <th>Categoria</th>
-            <th>Status</th>
-            <th>Imagen</th>
+            <th>Acciones</th>
         </thead>
         <tbody>
             {{#each productos}}
             <tr>
-            <td>{{this.id}}</td>
-            <td>{{this.title}}</td>
-            <td>{{this.description}}</td>
-            <td>{{this.price}}</td>
-            <td>{{this.code}}</td>
-            <td>{{this.stock}}</td>
-            <td>
-                {{#if this.category}}
-                {{this.category}}
-                {{else}}
-                No hay una categoria determinada
-                {{/if}}
-            </td>
-            <td>
-                {{#if this.status}}
-                Activo
-                {{else}}
-                Desactivado
-                {{/if}}
-            </td>
-            <td>
-                {{#if this.thumbnails.length}}
-                <a href="{{this.thumbnails.[0]}}" target="_blank">{{this.thumbnails.[0]}}
-                {{else}}
-                No hay imagenes cargadas
-                {{/if}}
+                <td>{{this._id}}</td>
+                <td><a href="/products/{{this._id}}">{{this.title}}</a></td>
+                <td>{{this.description}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.stock}}</td>
+                <td>
+                    <button class="add-to-cart" data-id="{{this._id}}">Agregar al carrito</button>
                 </td>
             </tr>
             {{/each}}
         </tbody>
     </table>
+
+    <div class="pagination">
+        {{#if hasPrevPage}}
+            <a href="?page={{prevPage}}">Anterior</a>
+        {{/if}}
+
+        {{#each pages}}
+            <a href="?page={{this}}" class="{{#if this.isActive}}active{{/if}}">{{this}}</a>
+        {{/each}}
+
+        {{#if hasNextPage}}
+            <a href="?page={{nextPage}}">Siguiente</a>
+        {{/if}}
+    </div>
 </div>
+
+<script>
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.getAttribute('data-id');
+            fetch(`/api/carts/1/products/${productId}`, {
+                method: 'POST'
+            }).then(response => response.json())
+              .then(data => alert(data.msg));
+        });
+    });
+</script>

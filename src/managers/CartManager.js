@@ -18,6 +18,16 @@ class CartManager{
         }
         return id;
     }
+    // #asignId() {
+    //     const ids = this.#carts.map(product => product.id);
+    //     let id = 1;
+    //     while (ids.includes(id)) {
+    //         id++;
+    //     }
+    //     return id;
+    // }
+    //Revisar este codigo para ver si funciona
+
     #readcartInfile(){
         try {
             if(fs.existsSync(this.#path)){

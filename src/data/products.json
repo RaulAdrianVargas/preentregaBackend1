@@ -1,1 +1,209 @@
-[{"id":1,"title":"Notebook","description":"Lenovo 5","price":1200000,"thumbnail":[],"code":"214wqe2","stock":40},{"id":2,"title":"Notebook","description":"hp 25","price":1200000,"thumbnail":"https://img2.com","code":"213214a","stock":50},{"id":3,"title":"All in one","description":"Pc all in one","price":120000,"thumbnail":[],"code":"eeoqr213","stock":25,"category":"Computer Desk","status":true},{"id":5,"title":"Titulo x","description":"description x","price":23145,"thumbnail":["https://img51.com"],"code":"qwrqc123","stock":56,"category":"x","status":"true"},{"id":6,"title":"1","description":"1","price":"1","thumbnails":[],"code":"1","stock":"1","category":"1","status":true},{"id":7,"title":"2","description":"2","price":"2","thumbnails":[],"code":"2","stock":"2","category":"2","status":true},{"id":8,"title":"Tablet Lenovo","description":"Tablet","price":"200000","thumbnails":[],"code":"124asdf","stock":"20","category":"Tablet Lenovo","status":true},{"id":9,"title":"ULTRA pc","description":"Pc master Race","price":1900000,"thumbnails":[],"code":"codigo124","stock":10,"category":"pcs","status":"true"},{"id":10,"title":"ULTRA pc","description":"Pc master Race","price":1900000,"thumbnails":[],"code":"codigo1234","stock":10,"category":"pcs","status":"true"}]
+[
+    {
+        "id": 1,
+        "title": "Notebook",
+        "description": "Lenovo 5",
+        "price": 1200000,
+        "thumbnail": [],
+        "code": "214wqe2",
+        "stock": 40
+    },
+    {
+        "id": 2,
+        "title": "Notebook",
+        "description": "hp 25",
+        "price": 1200000,
+        "thumbnail": "https://img2.com",
+        "code": "213214a",
+        "stock": 50
+    },
+    {
+        "id": 3,
+        "title": "All in one",
+        "description": "Pc all in one",
+        "price": 120000,
+        "thumbnail": [],
+        "code": "eeoqr213",
+        "stock": 25,
+        "category": "Computer Desk",
+        "status": true
+    },
+    {
+        "id": 5,
+        "title": "Titulo x",
+        "description": "description x",
+        "price": 23145,
+        "thumbnail": [
+            "https://img51.com"
+        ],
+        "code": "qwrqc123",
+        "stock": 56,
+        "category": "x",
+        "status": "true"
+    },
+    {
+        "id": 6,
+        "title": "1",
+        "description": "1",
+        "price": "1",
+        "thumbnails": [],
+        "code": "1",
+        "stock": "1",
+        "category": "1",
+        "status": true
+    },
+    {
+        "id": 7,
+        "title": "2",
+        "description": "2",
+        "price": "2",
+        "thumbnails": [],
+        "code": "2",
+        "stock": "2",
+        "category": "2",
+        "status": true
+    },
+    {
+        "id": 8,
+        "title": "Tablet Lenovo",
+        "description": "Tablet",
+        "price": "200000",
+        "thumbnails": [],
+        "code": "124asdf",
+        "stock": "20",
+        "category": "Tablet Lenovo",
+        "status": true
+    },
+    {
+        "id": 9,
+        "title": "ULTRA pc",
+        "description": "Pc master Race",
+        "price": 1900000,
+        "thumbnails": [],
+        "code": "codigo124",
+        "stock": 10,
+        "category": "pcs",
+        "status": "true"
+    },
+    {
+        "id": 10,
+        "title": "ULTRA pc",
+        "description": "Pc master Race",
+        "price": 1900000,
+        "thumbnails": [],
+        "code": "codigo1234",
+        "stock": 10,
+        "category": "pcs",
+        "status": "true"
+    },
+        {
+            "id": 11,
+            "title": "Monitor ASUS",
+            "description": "Monitor 24 pulgadas, 144Hz",
+            "price": 250000,
+            "thumbnail": ["https://img11.com"],
+            "code": "ASUSMON144",
+            "stock": 30,
+            "category": "Monitors",
+            "status": true
+        },
+        {
+            "id": 12,
+            "title": "Mouse Logitech",
+            "description": "Mouse inalámbrico",
+            "price": 40000,
+            "thumbnail": ["https://img12.com"],
+            "code": "LOGI123",
+            "stock": 100,
+            "category": "Accessories",
+            "status": true
+        },
+        {
+            "id": 13,
+            "title": "Teclado mecánico",
+            "description": "Teclado RGB Redragon",
+            "price": 150000,
+            "thumbnail": ["https://img13.com"],
+            "code": "MECKEYRBG",
+            "stock": 50,
+            "category": "Accessories",
+            "status": true
+        },
+        {
+            "id": 14,
+            "title": "Silla gamer",
+            "description": "Silla ergonómica con soporte lumbar",
+            "price": 450000,
+            "thumbnail": ["https://img14.com"],
+            "code": "CHAIR123",
+            "stock": 20,
+            "category": "Furniture",
+            "status": true
+        },
+        {
+            "id": 15,
+            "title": "Disco SSD",
+            "description": "SSD de 1TB Samsung",
+            "price": 300000,
+            "thumbnail": ["https://img15.com"],
+            "code": "SSD1TB",
+            "stock": 40,
+            "category": "Storage",
+            "status": true
+        },
+        {
+            "id": 16,
+            "title": "Auriculares Sony",
+            "description": "Auriculares inalámbricos con cancelación de ruido",
+            "price": 320000,
+            "thumbnail": ["https://img16.com"],
+            "code": "SONYWH1000",
+            "stock": 25,
+            "category": "Audio",
+            "status": true
+        },
+        {
+            "id": 17,
+            "title": "Tablet Samsung",
+            "description": "Tablet de 10 pulgadas",
+            "price": 220000,
+            "thumbnail": ["https://img17.com"],
+            "code": "TABSM10",
+            "stock": 30,
+            "category": "Tablets",
+            "status": true
+        },
+        {
+            "id": 18,
+            "title": "Impresora HP",
+            "description": "Impresora multifuncional",
+            "price": 180000,
+            "thumbnail": ["https://img18.com"],
+            "code": "HPPRINTER",
+            "stock": 15,
+            "category": "Printers",
+            "status": true
+        },
+        {
+            "id": 19,
+            "title": "Tarjeta gráfica",
+            "description": "NVIDIA RTX 4060 Ti",
+            "price": 750000,
+            "thumbnail": ["https://img19.com"],
+            "code": "RTX4060TI",
+            "stock": 10,
+            "category": "Graphics Cards",
+            "status": true
+        },
+        {
+            "id": 20,
+            "title": "Router WiFi",
+            "description": "Router dual-band TP-Link",
+            "price": 85000,
+            "thumbnail": ["https://img20.com"],
+            "code": "TPLINKDB",
+            "stock": 60,
+            "category": "Networking",
+            "status": true
+        }
+]

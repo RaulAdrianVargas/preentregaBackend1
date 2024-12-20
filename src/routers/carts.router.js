@@ -1,27 +1,26 @@
 import { Router } from "express";
-import CartManager from "../managers/CartManager.js";
+import { addProductInCart, createCart, deleteAllProductsInCart, deleteProductsInCart, getcartById, updateProductsInCart } from "../controllers/cart.controller.js";
+
 
 
 const router = Router();
 
-router.get("/:cid", (req,res)=>{
-    const {cid} = req.params;
-    const carrito = new CartManager();
-    const result = carrito.getcartById(Number(cid))
-    return res.json({result});
+router.get("/:cid", getcartById);
+
+router.post("/", createCart);
+
+router.post("/:cid/product/:pid", addProductInCart);
+
+router.delete('/:cid/products/:pid',  deleteProductsInCart);
+
+router.put('/:cid/products/:pid', updateProductsInCart )
+
+router.delete('/:cid', deleteAllProductsInCart);
+
+router.get('/carts/:cid', async (req, res) => {
+    const cart = await cartService.getCartById(req.params.cid);
+    res.render('cart', { cart });
 });
 
-router.post("/", (req,res)=>{
-    const carrito = new CartManager();
-    const result = carrito.createCart();
-    return res.json({result});
-});
-
-router.post("/:cid/product/:pid", (req,res)=>{
-    const {cid, pid} = req.params;
-    const carrito = new CartManager();
-    const result = carrito.addProductInCart(Number(cid), Number(pid));
-    return res.json({result});
-});
 
 export default router;

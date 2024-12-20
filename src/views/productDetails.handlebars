@@ -1,0 +1,29 @@
+<div>
+    <h1>Detalles del Producto</h1>
+
+    <h2>{{product.title}}</h2>
+    <img src="{{product.image}}" alt="Imagen de {{product.title}}" style="max-width: 200px;">
+    <p><strong>Descripción:</strong> {{product.description}}</p>
+    <p><strong>Precio:</strong> ${{product.price}}</p>
+    <p><strong>Categoría:</strong> {{product.category}}</p>
+    <p><strong>Stock:</strong> {{product.stock}}</p>
+
+    <button id="add-to-cart" data-id="{{product._id}}">Agregar al carrito</button>
+
+    <div id="message"></div> <!-- Mensaje de éxito o error -->
+</div>
+
+<script>
+    document.getElementById('add-to-cart').addEventListener('click', () => {
+        const productId = document.getElementById('add-to-cart').getAttribute('data-id');
+        fetch(`/api/carts/1/products/${productId}`, {
+            method: 'POST'
+        }).then(response => response.json())
+          .then(data => {
+              document.getElementById('message').textContent = data.msg;
+              setTimeout(() => {
+                  document.getElementById('message').textContent = ''; // Limpiar mensaje después de 3 segundos
+              }, 3000);
+          });
+    });
+</script>

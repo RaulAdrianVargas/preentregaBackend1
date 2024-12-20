@@ -16,32 +16,36 @@
             <th>Imagen</th>
         </thead>
         <tbody id="realTimeProducts">
+            {{#each productos}}
+                <tr>
+                    <td>{{this._id}}</td>
+                    <td>{{this.title}}</td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.code}}</td>
+                    <td>{{this.stock}}</td>
+                    <td>{{this.category}}</td>
+                    <td>{{this.status}}</td>
+                    <td><img src="{{this.thumbnail}}" alt="Imagen de {{this.title}}" style="max-width: 100px;"></td>
+                </tr>
+            {{else}}
+                <tr>
+                    <td colspan="9">No hay productos disponibles.</td>
+                </tr>
+            {{/each}}
         </tbody>
     </table>
 
     <h2>Agregar producto</h2>
-
+    <!-- Formulario para agregar productos -->
     <form id="agregar_producto">
-        <label for="titulo">Titulo:</label>
-        <input type="text" id="titulo" name="titulo" required>
-
-        <label for="descripcion">Descripcion:</label>
-        <input type="text" id="descripcion" name="descripcion" required>
-
-        <label for="precio">Precio:</label>
-        <input type="number" id="precio" name="precio" required>
-
-        <label for="codigo">Código:</label>
-        <input type="text" id="codigo" name="codigo" required>
-
-        <label for="stock">Stock:</label>
-        <input type="number" id="stock" name="stock" required>
-
-        <label for="categoria">Categoria:</label>
-        <input type="text" id="categoria" name="categoria" required>
-        
+        <label for="title">Titulo:</label>
+        <input type="text" id="title" name="title" required>
+        <!-- Otros campos... -->
         <button type="submit">Agregar Producto</button>
     </form>
+
+    <div id="error-message"></div> <!-- Mostrar mensaje de error -->
 </div>
 
 <script src="/socket.io/socket.io.js"></script>

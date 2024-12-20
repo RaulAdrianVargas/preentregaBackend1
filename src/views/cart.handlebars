@@ -1,0 +1,38 @@
+<div>
+    <h1>Carrito de Compras</h1>
+
+    <h3>Productos en el carrito:</h3>
+
+    <table>
+        <thead>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            {{#each cart.products}}
+            <tr>
+                <td>{{this.title}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.quantity}}</td>
+                <td>
+                    <button class="remove-product" data-id="{{this._id}}">Eliminar</button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    document.querySelectorAll('.remove-product').forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.getAttribute('data-id');
+            fetch(`/api/carts/1/products/${productId}`, {
+                method: 'DELETE'
+            }).then(response => response.json())
+              .then(data => alert(data.msg));
+        });
+    });
+</script>

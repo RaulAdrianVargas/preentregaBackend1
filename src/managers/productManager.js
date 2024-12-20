@@ -18,6 +18,7 @@ class ProductManager{
         return id;
     }
 
+
     //Es un metodo para obtener los productos. Es privada porque solo va a ser utilizada en mi clase.
     #readProductInfile(){
         try {
@@ -41,7 +42,7 @@ class ProductManager{
         }
     };
 
-    addProduct({ title, description, price, code, stock, category, status = true, thumbnails = [] }) {
+    addProduct({ title, description, price, code, stock, category, status = true, thumbnail = [] }) {
         if (!title || !description || !price || !code || !stock || !category) {
             return "Todos los parametros son requeridos [title,description,price,code,stock,category]";
         }
@@ -57,7 +58,7 @@ class ProductManager{
             title,
             description,
             price,
-            thumbnails,
+            thumbnail,
             code,
             stock,
             category,
